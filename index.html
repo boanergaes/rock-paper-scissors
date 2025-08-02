@@ -10,21 +10,39 @@
 <body>
     <h1>Rock Paper Scissors</h1>
     <p>choose from 1(rock), 2(paper), 3(scissors)</p>
+
+    <div class="round-display-container">
+        <label for="round-display">Round:</label>
+        <output id="round-display">5</output>
+    </div>
+    
+    <output class="win-status"> Good Luck! </output>
+
+    <div class="input-display-container">
+        <div class="inner-input-container">
+            <label for="computer-input">C:</label>
+            <output id="computer-input"></output>
+        </div>
+        <div class="inner-input-container">
+            <label for="user-input">Y:</label>
+            <output id="user-input"></output>
+        </div>
+    </div>
+    <div class="score-output-container">
+        <div class="computer-score-container">
+            <label for="computer-score">Computer:</label>
+            <output id="computer-score">0</output>
+        </div>
+        <div class="user-score-container">
+            <label for="user-score">You:</label>
+            <output id="user-score">0</output>
+        </div>
+    </div>
+
     <div class="input-container">
         <label for="input">Input:</label>
-        <input class="input" type="number" min="1" max="3" placeholder="input" id="input" name="input">
-        <button>Go</button>
-    </div>
-    <div class="result"></div>
-    <div class="result-output-container">
-        <div class="computer-res-container">
-            <label for="comp-res">Computer:</label>
-            <output id="comp-res"></output>
-        </div>
-        <div class="user-res-container">
-            <label for="user-res">You:</label>
-            <output id="user-res"></output>
-        </div>
+        <input type="number" min="1" max="3" placeholder="input" id="input" name="input">
+        <button id="go-btn">Go</button>
     </div>
 </body>
 </html>
