@@ -33,64 +33,70 @@
         </section>
 
         <section class="win-status-container">
-            <div id="computer-input">
-                    <img src="./images/hand-rock-to-right.PNG" alt="input displayer hand">
-            </div>
-
             <div class="win-status-output-container">
                 <output class="win-status">Good Luck!</output>
                 <output class="final-win-status">Congrats, You have WON!!!</output>
             </div>
-
-            <div id="user-input">
-                    <img src="./images/hand-scr-to-left.PNG" alt="input displayer hand">
-            </div>
         </section>
 
         <section class="input-display-container">
-            <div class="computer-side">
-                <div class="player-logo">
-                    <img src="./images/bot-logo-final.JPG" alt="image of a bot">
+            <div class="side-container">
+                <div class="computer-side">
+                    <div class="player-logo">
+                        <img src="./images/bot-logo-final.JPG" alt="image of a bot">
+                    </div>
+    
+                    <div class="rps-container">
+                        <div class="rps-bar">
+                            <img src="./images/rock-bot-wbg-removebg-preview.png" alt="rock">
+                        </div>
+                        <div class="rps-bar">
+                            <img src="./images/paper-bot-wbg-removebg-preview.png" alt="paper">
+                        </div>
+                        <div class="rps-bar">
+                            <img src="./images/scr-bot-wbg-removebg-preview.png" alt="scissors">
+                        </div>
+                    </div>
+    
+                    <div class="score-container">
+                        <label for="computer-score">Score:</label>
+                        <output id="computer-score">0</output>
+                    </div>
+    
+                    
                 </div>
-
-                <div class="rps-container">
-                    <div class="rps-bar">
-                        <img src="./images/rock-bot-wbg-removebg-preview.png" alt="rock">
+    
+                <div class="user-side">
+                    <div class="player-logo">
+                        <img src="./images/person-logo-final.PNG" alt="image of a person">
                     </div>
-                    <div class="rps-bar">
-                        <img src="./images/paper-bot-wbg-removebg-preview.png" alt="paper">
+    
+                    <div class="rps-container">
+                        <div class="rps-bar">
+                            <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
+                        </div>
+                        <div class="rps-bar">
+                            <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
+                        </div>
+                        <div class="rps-bar">
+                            <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
+                        </div>
                     </div>
-                    <div class="rps-bar">
-                        <img src="./images/scr-bot-wbg-removebg-preview.png" alt="scissors">
+    
+                    <div class="score-container">
+                        <label for="user-score">Score:</label>
+                        <output id="user-score">0</output>
                     </div>
-                </div>
-
-                <div class="score-container">
-                    <label for="computer-score">Score:</label>
-                    <output id="computer-score">0</output>
                 </div>
             </div>
 
-            <div class="user-side">
-                <div class="player-logo">
-                    <img src="./images/person-logo-final.PNG" alt="image of a person">
+            <div class="hand-container">
+                <div id="computer-input">
+                    <img src="./images/hand-rock-to-right.PNG" alt="">
                 </div>
 
-                <div class="rps-container">
-                    <div class="rps-bar">
-                        <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
-                    </div>
-                    <div class="rps-bar">
-                        <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
-                    </div>
-                    <div class="rps-bar">
-                        <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
-                    </div>
-                </div>
-
-                <div class="score-container">
-                    <label for="user-score">Score:</label>
-                    <output id="user-score">0</output>
+                <div id="user-input">
+                    <img src="./images/hand-scr-to-left.PNG" alt="input displayer hand">
                 </div>
             </div>
         </section>
@@ -103,11 +109,6 @@
                 <button id="scr">SCISSORS</button>
             </div>
         </section>
-
-        <footer>
-            <img src="./images/rps-wanna-play-again-wbg-removebg-preview.png" alt="rock paper scissors characters">
-            <img src="./images/Rock-Paper-Scissor-cool-hands-removebg-preview.png" alt="rock paper scissor hands">
-        </footer>
     </main>
 </body>
 </html>

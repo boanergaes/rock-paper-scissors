@@ -2,12 +2,12 @@
     --body-background-color: hsl(0, 0%, 15%);
     --font-color-main: #eee;
     --main-section-width: 70%;
-    --main-section-max-width: 1000px;
+    --main-section-max-width: 650px;
     /* find a font */
     --font-family-major-mono: monospace; 
     --rps-container-bgcolor: hsl(0, 0%, 22%);
     --rps-bar-bgcolor: hsl(39, 100%, 40%);
-    --rps-bar-bgcolor-hover: hsl(39, 100%, 33%);
+    --rps-bar-bgcolor-hover: hsl(39, 100%, 37%);
 }
 
 * {
@@ -114,9 +114,10 @@ output.final-win-status {
 
 /* ========= INPUT DISPLAY ========== */
 
-section.input-display-container {
+.side-container {
     display: flex;
     justify-content: space-between;
+    gap: .8rem;
 }
 
 .computer-side, .user-side {
@@ -159,6 +160,13 @@ section.input-display-container {
     border-radius: 8px;
 }
 
+.hand-container {
+    height: 4.2rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1.5em;
+}
+
 #computer-input img, #user-input img {
     width: 100px;
 }
@@ -188,22 +196,11 @@ section.weapon-container {
     font-weight: 700;
     border: 1px solid var(--font-color-main);
     box-shadow: 1px 1px 3px hsl(0, 0%, 0%);
-    transition: all .3s ease-out;
+    transition: scale .3s ease-out,
+                background-color .3s ease-out;
 }
 
 .weapons button:hover {
     scale: 1.05;
     background-color: var(--rps-bar-bgcolor-hover);
-}
-
-/* ====== FOOTER ======= */
-
-footer {
-    display: none;
-    justify-content: space-between;
-}
-
-footer img {
-    max-width: 200px;
-    height: auto;
 }
