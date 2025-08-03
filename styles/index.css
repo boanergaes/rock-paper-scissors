@@ -47,7 +47,7 @@ header img {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1.5rem 0;
+    padding-bottom: 1rem;
 }
 hr.header-separator {
     width: 88%;
@@ -60,6 +60,13 @@ hr.header-separator {
 section.below-header {
     display: flex;
     justify-content: space-between;
+}
+
+.round-container {
+    background-color: var(--rps-container-bgcolor);
+    padding: 6px 14px;
+    border-radius: 8px;
+    width: 9.7rem;
 }
 
 .accessors {
@@ -88,7 +95,7 @@ section.win-status-container {
 output.win-status {
     height: 3rem;
     width: 12rem;
-    background-color: hsl(39, 100%, 40%);
+    background-color: var(--rps-bar-bgcolor);
     color: black;
     font-size: 1.7rem;
     font-weight: 900;
