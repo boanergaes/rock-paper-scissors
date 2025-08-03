@@ -11,6 +11,7 @@
 <body>
     <header>
         <img src="./images/RockPaperScissorsLogo-final.png" alt="rock paper scissors logo">
+
         <div class="hr-container">
             <hr class="header-separator">
         </div>
@@ -30,7 +31,6 @@
         </section>
     </header>
     <main>
-
         <section class="win-status-container">
             <output class="win-status">Good Luck!</output>
         </section>
@@ -59,6 +59,7 @@
                         <output id="computer-score">0</output>
                     </div>
     
+                    <!-- this is initially not visible, will be animated to float up if computer wins with Js -->
                     <div class="bonus computer">+10</div>                
                 </div>
     
@@ -84,11 +85,14 @@
                         <output id="user-score">0</output>
                     </div>
 
+                    <!-- this is initially not visible, will be animated to float up if computer wins with Js -->
                     <div class="bonus user">+10</div>
                 </div>
             </div>
 
             <div class="hand-container">
+                <!-- the image(src) will change according to the input payers gave -->
+
                 <div id="computer-input">
                     <img src="./images/hand-rock-to-right.PNG" alt="">
                 </div>
@@ -108,9 +112,10 @@
             </div>
         </section>
 
+        <!-- this section only appears when a game ends -->
         <section class="play-again">
             <h1>Congrats, You have WON!!!</h1>
-            
+
             <div class="final-score-output">
                 <div class="c-final-containerr">
                     <label for="c-final-output">Computer:</label>
@@ -126,5 +131,8 @@
             <button id="play-again-btn">Play Again</button>
         </section>
     </main>
+    <footer>
+        <p>© 2025 boanergaes . Feel free to fork and improve this</p>
+    </footer>
 </body>
 </html>

@@ -28,8 +28,9 @@ function determineWinner(usrInput, computerInput) {
 
     else winner = 'computer';
 
+    // for the floating +10 animation
     if (winner != 'tie') {
-        const bonus = document.querySelector(`.bonus.${winner}`);
+        const bonus = document.querySelector(`.bonus.${winner}`); //to pick on which side to perform the animation on
         bonus.animate(
             [
                 {opacity: 1},
@@ -90,6 +91,7 @@ scrBtn.addEventListener('click', () => {
     main('scissors');
 });
 
+// below this is to have a hover effect on the weapon buttons but the change is applied on the pawn bars
 rockBtn.addEventListener('mouseover', () => {
     const rockPawn = document.querySelector(`.rps-bar.rock`);
     rockPawn.style.backgroundColor = 'orange';
@@ -144,6 +146,7 @@ function main(usrInp) {
         
     else winStatusDisplay.textContent = 'TIE';
 
+    // the end of a game with 7 rounds
     if (round === 1) {
         playAgainSec.style.display = 'flex';
 
@@ -158,50 +161,7 @@ function main(usrInp) {
 
         compFinalScoreOutput.textContent = computerScore;
         usrFinalScoreOutput.textContent = usrScore;
-
     }    
     round--;
     roundDisplay.textContent = round;
 }
-
-// goBtn.addEventListener('click', () => {
-//     if (usrInput.value === '') {
-//         alert('Enter 1(rock), 2(paper), 3(scissors) to play')
-//         return;
-//     }
-//     const usrNum = parseInt(usrInput.value);
-//     if (usrNum < 1 || usrNum > 3) {
-//         alert('Please make sure you enter a number between 1 and 3');
-//         return;
-//     }
-
-//     const genNum = generateNumber();
-
-//     inputDisplayer(usrNum, genNum)
-
-//     const winner = determineWinner(usrNum, genNum);
-
-//     if (winner  === 'tie') {
-//         winStatusDisplay.textContent = 'TIE';
-//     }
-//     else if (winner === 'user') {
-//         winStatusDisplay.textContent = 'WIN';
-//         usrScore++;
-//         usrScoreDisplay.textContent = usrScore;
-//     }
-//     else {
-//         winStatusDisplay.textContent = 'LOSE';
-//         computerScore++;
-//         computerScoreDisplay.textContent = computerScore;
-//     }
-
-//     if (r === 1) {
-//         if (usrScore > computerScore) winStatusDisplay.textContent = 'Congratulations, You have WON!!!';
-//         else if (usrScore < computerScore) winStatusDisplay.textContent = 'Oops, You have LOST!!!';
-//         else winStatusDisplay.textContent = 'Nice try, it was a TIE.';
-//         r = round;
-//         return;
-//     }    
-//     r--;
-//     roundDisplay.textContent = r;
-// })
