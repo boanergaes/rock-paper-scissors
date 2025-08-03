@@ -4,45 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/core.js" defer></script>
+    <script src="./js/lightmode.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>choose from 1(rock), 2(paper), 3(scissors)</p>
+    <main>
+        <header>
+            <img src="./images/RockPaperScissorsLogo-final.png" alt="rock paper scissors logo">
+        </header>
 
-    <div class="round-display-container">
-        <label for="round-display">Round:</label>
-        <output id="round-display">5</output>
-    </div>
-    
-    <output class="win-status"> Good Luck! </output>
+        <div class="hr-container">
+            <hr class="header-separator">
+        </div>
 
-    <div class="input-display-container">
-        <div class="inner-input-container">
-            <label for="computer-input">C:</label>
-            <output id="computer-input"></output>
-        </div>
-        <div class="inner-input-container">
-            <label for="user-input">Y:</label>
-            <output id="user-input"></output>
-        </div>
-    </div>
-    <div class="score-output-container">
-        <div class="computer-score-container">
-            <label for="computer-score">Computer:</label>
-            <output id="computer-score">0</output>
-        </div>
-        <div class="user-score-container">
-            <label for="user-score">You:</label>
-            <output id="user-score">0</output>
-        </div>
-    </div>
+        <section class="below-header">
+            <div class="round-container">
+                <label for="round">Round:</label>
+                <output id="round">5</output>
+            </div>
 
-    <div class="input-container">
-        <label for="input">Input:</label>
-        <input type="number" min="1" max="3" placeholder="input" id="input" name="input">
-        <button id="go-btn">Go</button>
-    </div>
+            <div class="accessors">
+                <svg class="history" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history-icon lucide-history"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/><title>History</title></svg>
+                <svg class="help" title="Help" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question-mark-icon lucide-message-circle-question-mark"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/><title>Help</title></svg>
+                <svg class="about" title="About" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/><title>About</title></svg>
+                <svg class="theme" title="Theme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lamp-desk-icon lucide-lamp-desk"><path d="M10.293 2.293a1 1 0 0 1 1.414 0l2.5 2.5 5.994 1.227a1 1 0 0 1 .506 1.687l-7 7a1 1 0 0 1-1.687-.506l-1.227-5.994-2.5-2.5a1 1 0 0 1 0-1.414z"/><path d="m14.207 4.793-3.414 3.414"/><path d="M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18"/><title>Theme</title></svg>
+            </div>
+        </section>
+
+        <section class="win-status-container">
+            <div id="computer-input">
+                    <img src="./images/hand-rock-to-right.PNG" alt="input displayer hand">
+            </div>
+
+            <div class="win-status-output-container">
+                <output class="win-status">Good Luck!</output>
+                <output class="final-win-status">Congrats, You have WON!!!</output>
+            </div>
+
+            <div id="user-input">
+                    <img src="./images/hand-scr-to-left.PNG" alt="input displayer hand">
+            </div>
+        </section>
+
+        <section class="input-display-container">
+            <div class="computer-side">
+                <div class="player-logo">
+                    <img src="./images/bot-logo-final.JPG" alt="image of a bot">
+                </div>
+
+                <div class="rps-container">
+                    <div class="rps-bar">
+                        <img src="./images/rock-bot-wbg-removebg-preview.png" alt="rock">
+                    </div>
+                    <div class="rps-bar">
+                        <img src="./images/paper-bot-wbg-removebg-preview.png" alt="paper">
+                    </div>
+                    <div class="rps-bar">
+                        <img src="./images/scr-bot-wbg-removebg-preview.png" alt="scissors">
+                    </div>
+                </div>
+
+                <div class="score-container">
+                    <label for="computer-score">Score:</label>
+                    <output id="computer-score">0</output>
+                </div>
+            </div>
+
+            <div class="user-side">
+                <div class="player-logo">
+                    <img src="./images/person-logo-final.PNG" alt="image of a person">
+                </div>
+
+                <div class="rps-container">
+                    <div class="rps-bar">
+                        <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
+                    </div>
+                    <div class="rps-bar">
+                        <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
+                    </div>
+                    <div class="rps-bar">
+                        <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
+                    </div>
+                </div>
+
+                <div class="score-container">
+                    <label for="user-score">Score:</label>
+                    <output id="user-score">0</output>
+                </div>
+            </div>
+        </section>
+
+        <section class="weapon-container">
+            <h1>CHOOSE YOUR WEAPON!</h1>
+            <div class="weapons">
+                <button id="rock">ROCK</button>
+                <button id="paper">PAPER</button>
+                <button id="scr">SCISSORS</button>
+            </div>
+        </section>
+
+        <footer>
+            <img src="./images/rps-wanna-play-again-wbg-removebg-preview.png" alt="rock paper scissors characters">
+            <img src="./images/Rock-Paper-Scissor-cool-hands-removebg-preview.png" alt="rock paper scissor hands">
+        </footer>
+    </main>
 </body>
 </html>

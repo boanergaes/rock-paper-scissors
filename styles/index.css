@@ -1,0 +1,202 @@
+:root {
+    --body-background-color: hsl(0, 0%, 15%);
+    --font-color-main: #eee;
+    --main-section-width: 70%;
+    --main-section-max-width: 1000px;
+    /* find a font */
+    --font-family-major-mono: monospace; 
+    --rps-container-bgcolor: hsl(0, 0%, 22%);
+    --rps-bar-bgcolor: hsl(39, 100%, 40%);
+    --rps-bar-bgcolor-hover: hsl(39, 100%, 33%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--font-color-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family-major-mono);
+}
+
+main {
+    width: var(--main-section-width);
+    max-width: var(--main-section-max-width);
+}
+
+/* ========== HEADER ========== */
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+}
+
+header img {
+    width: 8rem;
+}
+
+.hr-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+hr.header-separator {
+    width: 88%;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+/* ========= BELOW HEADER SECTION ============= */
+
+section.below-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accessors {
+    display: flex;
+    gap: .6em;
+    transition: all .3s linear;
+}
+
+.accessors svg {
+    cursor: pointer;
+}
+.accessors svg:hover {
+    opacity: .8;
+}
+
+/* =========== WIN STATUS SECTION =========== */
+
+section.win-status-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 0;
+}
+
+output.win-status {
+    height: 3rem;
+    width: 12rem;
+    background-color: hsl(39, 100%, 40%);
+    color: black;
+    font-size: 1.7rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ?????????????????? display none here ??????????????????????? */
+output.final-win-status {
+    display: none;
+    height: 5rem;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+/* ========= INPUT DISPLAY ========== */
+
+section.input-display-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.computer-side, .user-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.rps-container {
+    background-color: var(--rps-container-bgcolor);
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    border-radius: 5px;
+}
+
+.rps-bar {
+    background-color: var(--rps-bar-bgcolor);
+    width: 45px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.rps-bar img {
+    height: 40px;
+}
+
+.score-container {
+    padding: .5rem;
+    background-color:  var(--rps-container-bgcolor);
+    width: 100%;
+    border-radius: 8px;
+}
+
+#computer-input img, #user-input img {
+    width: 100px;
+}
+
+/* ========= WEAPONS ========== */
+
+section.weapon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    gap: .6rem;
+}
+
+.weapons {
+    display: flex;
+    gap: 1rem;
+}
+
+.weapons button {
+    cursor: pointer;
+    padding: 8px 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 6px;
+    background-color: var(--rps-bar-bgcolor);
+    color: var(--font-color-main);
+    font-weight: 700;
+    border: 1px solid var(--font-color-main);
+    box-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    transition: all .3s ease-out;
+}
+
+.weapons button:hover {
+    scale: 1.05;
+    background-color: var(--rps-bar-bgcolor-hover);
+}
+
+/* ====== FOOTER ======= */
+
+footer {
+    display: none;
+    justify-content: space-between;
+}
+
+footer img {
+    max-width: 200px;
+    height: auto;
+}
