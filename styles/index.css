@@ -244,6 +244,7 @@ section.play-again {
 footer p {
     opacity: .8;
     font-size: .8rem;
+    text-align: center;
 }
 
 
