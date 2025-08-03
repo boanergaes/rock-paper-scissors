@@ -9,11 +9,8 @@
     <script src="./js/lightmode.js" defer></script>
 </head>
 <body>
-    <main>
-        <header>
-            <img src="./images/RockPaperScissorsLogo-final.png" alt="rock paper scissors logo">
-        </header>
-
+    <header>
+        <img src="./images/RockPaperScissorsLogo-final.png" alt="rock paper scissors logo">
         <div class="hr-container">
             <hr class="header-separator">
         </div>
@@ -21,7 +18,7 @@
         <section class="below-header">
             <div class="round-container">
                 <label for="round">Round:</label>
-                <output id="round">5</output>
+                <output id="round">7</output>
             </div>
 
             <div class="accessors">
@@ -31,12 +28,11 @@
                 <svg class="theme" title="Theme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lamp-desk-icon lucide-lamp-desk"><path d="M10.293 2.293a1 1 0 0 1 1.414 0l2.5 2.5 5.994 1.227a1 1 0 0 1 .506 1.687l-7 7a1 1 0 0 1-1.687-.506l-1.227-5.994-2.5-2.5a1 1 0 0 1 0-1.414z"/><path d="m14.207 4.793-3.414 3.414"/><path d="M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18"/><title>Theme</title></svg>
             </div>
         </section>
+    </header>
+    <main>
 
         <section class="win-status-container">
-            <div class="win-status-output-container">
-                <output class="win-status">Good Luck!</output>
-                <output class="final-win-status">Congrats, You have WON!!!</output>
-            </div>
+            <output class="win-status">Good Luck!</output>
         </section>
 
         <section class="input-display-container">
@@ -63,7 +59,7 @@
                         <output id="computer-score">0</output>
                     </div>
     
-                    
+                    <div class="bonus computer">+10</div>                
                 </div>
     
                 <div class="user-side">
@@ -72,13 +68,13 @@
                     </div>
     
                     <div class="rps-container">
-                        <div class="rps-bar">
+                        <div class="rps-bar rock">
                             <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
                         </div>
-                        <div class="rps-bar">
+                        <div class="rps-bar paper">
                             <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
                         </div>
-                        <div class="rps-bar">
+                        <div class="rps-bar scissors">
                             <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
                         </div>
                     </div>
@@ -87,6 +83,8 @@
                         <label for="user-score">Score:</label>
                         <output id="user-score">0</output>
                     </div>
+
+                    <div class="bonus user">+10</div>
                 </div>
             </div>
 
@@ -108,6 +106,24 @@
                 <button id="paper">PAPER</button>
                 <button id="scr">SCISSORS</button>
             </div>
+        </section>
+
+        <section class="play-again">
+            <h1>Congrats, You have WON!!!</h1>
+            
+            <div class="final-score-output">
+                <div class="c-final-containerr">
+                    <label for="c-final-output">Computer:</label>
+                    <output id="c-final-output"></output>
+                </div>
+
+                <div class="u-final-container">
+                    <label for="u-final-output">You:</label>
+                    <output id="u-final-output"></output>
+                </div>
+            </div>
+
+            <button id="play-again-btn">Play Again</button>
         </section>
     </main>
 </body>

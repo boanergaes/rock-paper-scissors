@@ -1,5 +1,6 @@
 :root {
     --body-background-color: hsl(0, 0%, 15%);
+    --body-background-color-low-opacity: hsla(0, 0%, 15%, .9);
     --font-color-main: #eee;
     --main-section-width: 70%;
     --main-section-max-width: 650px;
@@ -21,26 +22,30 @@ body {
     color: var(--font-color-main);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: var(--font-family-major-mono);
 }
 
 main {
     width: var(--main-section-width);
     max-width: var(--main-section-max-width);
+    position: relative;
 }
 
 /* ========== HEADER ========== */
 
 header {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    width: var(--main-section-width);
+    max-width: var(--main-section-max-width);
 }
 
 header img {
     width: 8rem;
+    margin: 1.6rem;
 }
 
 .hr-container {
@@ -55,11 +60,12 @@ hr.header-separator {
     border-bottom: 1px solid;
 }
 
-/* ========= BELOW HEADER SECTION ============= */
+/* -------- BELOW HEADER SECTION ------------ */
 
 section.below-header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .round-container {
@@ -89,7 +95,7 @@ section.win-status-container {
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
-    padding: 3rem 0;
+    padding: 2.4rem 0;
 }
 
 output.win-status {
@@ -102,14 +108,6 @@ output.win-status {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* ?????????????????? display none here ??????????????????????? */
-output.final-win-status {
-    display: none;
-    height: 5rem;
-    font-size: 2.4rem;
-    text-align: center;
 }
 
 /* ========= INPUT DISPLAY ========== */
@@ -125,6 +123,7 @@ output.final-win-status {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 .player-logo img {
@@ -171,6 +170,15 @@ output.final-win-status {
     width: 100px;
 }
 
+.bonus {
+    font-size: 2rem;
+    font-weight: 900;
+    color: red;
+    position: absolute;
+    bottom: -8rem;
+    opacity: 0;
+}
+
 /* ========= WEAPONS ========== */
 
 section.weapon-container {
@@ -186,7 +194,7 @@ section.weapon-container {
     gap: 1rem;
 }
 
-.weapons button {
+button {
     cursor: pointer;
     padding: 8px 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -200,7 +208,50 @@ section.weapon-container {
                 background-color .3s ease-out;
 }
 
-.weapons button:hover {
+button:hover {
     scale: 1.05;
     background-color: var(--rps-bar-bgcolor-hover);
+}
+
+/* ========= PLAY AGAIN SECTION ========== */
+
+section.play-again {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+    background-color: var(--body-background-color-low-opacity);
+}
+
+.play-again h1 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.final-score-output {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    :root {
+        --main-section-width: 100%;
+    }
+
+    main {
+        padding: min(2%, 1rem);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    main {
+        padding: 0;
+    }
 }
