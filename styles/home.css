@@ -12,6 +12,15 @@
     --main-font-size: 1rem
 }
 
+.lightmode {
+    --body-background-color: hsl(0, 0%, 93%);
+    --body-background-color-low-opacity: hsla(0, 0%, 93%, .9);
+    --font-color-main: black;
+    --rps-container-bgcolor: hsl(0, 0%, 84%);
+    --rps-bar-bgcolor: hsl(39, 100%, 48%);
+    --rps-bar-bgcolor-hover: hsl(39, 100%, 45%);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -206,7 +215,7 @@ button {
     color: var(--font-color-main);
     font-weight: 700;
     border: 1px solid var(--font-color-main);
-    box-shadow: 1px 1px 3px hsl(0, 0%, 0%);
+    box-shadow: 1px 1px 3px hsla(0, 0%, 0%, .3);
     transition: scale .3s ease-out,
                 background-color .3s ease-out;
 }

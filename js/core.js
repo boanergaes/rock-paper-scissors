@@ -93,34 +93,6 @@ scrBtn.addEventListener('click', () => {
     main('scissors');
 });
 
-// below this is to have a hover effect on the weapon buttons but the change is applied on the pawn bars
-rockBtn.addEventListener('mouseover', () => {
-    const rockPawn = document.querySelector(`.rps-bar.rock`);
-    rockPawn.style.backgroundColor = 'orange';
-});
-rockBtn.addEventListener('mouseleave', () => {
-    const rockPawn = document.querySelector(`.rps-bar.rock`);
-    rockPawn.style.backgroundColor = 'hsl(39, 100%, 40%)';
-})
-
-paperBtn.addEventListener('mouseover', () => {
-    const rockPawn = document.querySelector(`.rps-bar.paper`);
-    rockPawn.style.backgroundColor = 'orange';
-});
-paperBtn.addEventListener('mouseleave', () => {
-    const rockPawn = document.querySelector(`.rps-bar.paper`);
-    rockPawn.style.backgroundColor = 'hsl(39, 100%, 40%)';
-})
-
-scrBtn.addEventListener('mouseover', () => {
-    const rockPawn = document.querySelector(`.rps-bar.scissors`);
-    rockPawn.style.backgroundColor = 'orange';
-});
-scrBtn.addEventListener('mouseleave', () => {
-    const rockPawn = document.querySelector(`.rps-bar.scissors`);
-    rockPawn.style.backgroundColor = 'hsl(39, 100%, 40%)';
-})
-
 const playAgainBtn = document.querySelector('#play-again-btn');
 
 playAgainBtn.addEventListener('click', () => {

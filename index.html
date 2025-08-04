@@ -9,7 +9,6 @@
     <script src="./js/core.js" defer></script>
     <script src="./js/lightmode.js" defer></script>
     <script src="./js/side-bar-animation.js" defer></script>
-    <script src="./js/history.js" defer></script>
 </head>
 <body>
     <header>
@@ -33,6 +32,7 @@
             </div>
         </section>
     </header>
+
     <main>
         <section class="win-status-container">
             <output class="win-status">Good Luck!</output>
@@ -134,10 +134,12 @@
             <button id="play-again-btn">Play Again</button>
         </section>
     </main>
+
     <footer>
         <p>© 2025 boanergaes</p>
     </footer>
 
+    <!-- after this, all are not part of the main page. they'll be invisible unless called for -->
     <section class="side-bar-container">
         <aside class="history">
             <div class="above">
@@ -169,6 +171,69 @@
             <div class="above">
                 <h1 class="title">Help</h1>
                 <svg class="cls" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/><title>Close</title></svg>
+            </div>
+
+            <div class="txt-content">
+                <!-- 🪨📄✂️ -->
+                <h2>About the Game</h2> 
+                <p>
+                    Rock Paper Scissors is a simple and fun hand game played between two players — in this case, you vs. the computer.
+                </p>
+                <ul>
+                    <p>Each player chooses one of three moves:</p>
+                    <li><strong>Rock</strong> beats Scissors</li>
+                    <li><strong>Scissors</strong> beats Paper</li>
+                    <li><strong>Paper</strong> beats Rock</li>
+                    <p>If both players choose the same move, the round ends in <strong>tie.</strong></p>
+                </ul>
+
+                <h2>How the Game Works</h2>
+                <p>In this version of the game:</p>
+                <ul>
+                    <li>The game consists of 7 rounds</li>
+                    <li>
+                        In each round:
+                        <ul>
+                            <li>If you win, you earn 10 pts.</li>
+                            <li>If the computer wins, it earns 10 pts.</li>
+                            <li>If it's a tie or you lose, you gain no pts.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        At the end of the 7 rounds:
+                        <ul>
+                            <li>If your total score is higher, <strong>you win the game.</strong></li>
+                            <li>If the computer scores higher, <strong>you lose.</strong></li>
+                            <li>If both scores are equal, <strong>it's a tie.</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    At the end of each full game (after 7 rounds), your result along with your and the computer's scores will be saved. You can find your past games in the History Page.
+                </p>
+
+                <h2>How to Play</h2>
+                <ul>
+                    <li>You will see three buttons on the bottom of the screen -- one for each move: <strong>Rock, Paper,</strong> and <strong>Scissors.</strong></li>
+                    <li>Click any one of them to make your move for the current round.</li>
+                    <li>The computer will automatically pick its move, and the result of the round will be displayed immediately.</li>
+                    <li>After 7 rounds, your final score and game result will be shown.</li>
+                </ul>
+
+                <h2>Navigating the Website</h2>
+                <p>In the top-right corner of the page, you'll find four helpful buttons:</p>
+                <ul>
+                    <li>History -- View the results of all completed games.</li>
+                    <li>Help -- You're here now!</li>
+                    <li>About -- Learn about this project and it's developer.</li>
+                    <li>Theme -- Switch between light mode and dark mode.</li>
+                </ul>
+
+                <p>Let the games begin -- and may the best mobe win!</p>
+            </div>
+            
+            <div class="img-container bottom">
+                <img width="200px" src="./images/Rock-Paper-Scissor-cool-hands-removebg-preview.png" alt="">
             </div>
         </aside>
 
