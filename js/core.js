@@ -6,6 +6,8 @@ let computerScoreDisplay = document.querySelector('#computer-score')
 let roundDisplay = document.querySelector('#round');
 const playAgainSec = document.querySelector('.play-again');
 
+let history = [];
+
 let round = 7; //take user input perhaps
 
 function generateInput() {
@@ -37,7 +39,7 @@ function determineWinner(usrInput, computerInput) {
                 {opacity: 0, transform: 'translateY(-16rem)'}
             ],
             {
-                duration: 1200,
+                duration: 1600,
                 iterations: 1,
                 easing: 'ease',
             }
@@ -150,11 +152,26 @@ function main(usrInp) {
     if (round === 1) {
         playAgainSec.style.display = 'flex';
 
+        let stat = {};
+        stat['user'] = usrScore;
+        stat['computer'] = computerScore;
+
         const winStatusFinal = document.querySelector('.play-again h1');
 
-        if (usrScore > computerScore) winStatusFinal.textContent = 'Congrats, You have WON!!!🎉';
-        else if (usrScore < computerScore) winStatusFinal.textContent = 'Oops, You have LOST!!!😢';
-        else winStatusFinal.textContent = 'Nice try, it was a TIE.👍';
+        if (usrScore > computerScore) {
+            winStatusFinal.textContent = 'Congrats, You have WON!!!🎉';
+            stat['status'] = 'WIN';
+        }
+        else if (usrScore < computerScore) {
+            winStatusFinal.textContent = 'Oops, You have LOST!!!😢';
+            stat['status'] = 'LOSE';
+        }
+        else {
+            winStatusFinal.textContent = 'Nice try, it was a TIE.👍';
+            stat['status'] = 'TIE';
+        }
+
+        history.push(stat);
 
         const compFinalScoreOutput = document.querySelector('#c-final-output');
         const usrFinalScoreOutput = document.querySelector('#u-final-output');
