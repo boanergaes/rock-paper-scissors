@@ -1,0 +1,44 @@
+:root {
+    --aside-width: 35vw;
+    --body-background-color: hsl(0, 0%, 15%);
+    --body-background-color-low-opacity: hsla(0, 0%, 15%, .9);
+    --font-color-main: hsl(0, 0%, 93%);
+    --font-color-main-low-opacity: hsla(0, 0%, 93%, .4);
+}
+
+/* body is position relative from home.css */
+section.side-bar-container {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--body-background-color-low-opacity);
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    /* choose the maximum of min-width and percentage to make sure it will be completely covered. */
+    right: calc(-1 * max(350px, var(--aside-width)));
+    width: var(--aside-width);
+    min-width: 350px;
+    height: 100vh;
+    background-color: var(--body-background-color);
+    border-left: 1px solid var(--font-color-main-low-opacity);
+    padding: 2vw;
+}
+
+.above {
+    display: flex;
+    justify-content: space-between;
+}
+
+.above .cls {
+    cursor: pointer;
+}
+
+.above .cls:hover {
+    opacity: .8;
+}
