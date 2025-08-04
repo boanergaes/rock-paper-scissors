@@ -7,6 +7,52 @@ const historyPage = document.querySelector('aside.history');
 const helpPage = document.querySelector('aside.help');
 const aboutPage = document.querySelector('aside.about');
 
+const list = document.querySelector('aside.history ul');
+function loadHistory() {
+
+    if (history.length === 0) {
+        list.textContent = "There's is no history yet.";
+        return;
+    }
+
+    for (let l = history.length - 1; l >= 0; l--) {
+        let newli = document.createElement('li');
+    
+        let h2 = document.createElement('h2');
+        h2.textContent = 'Game ';
+    
+        let span = document.createElement('span');
+    
+        let scrDisplayLi = document.createElement('div');
+        scrDisplayLi.classList.add('score-display-li');
+    
+        let cout = document.createElement('output');
+        cout.classList.add('comp-li');
+    
+        let sta = document.createElement('output');
+        sta.classList.add('status-li');
+        
+        let uout = document.createElement('output');
+        uout.classList.add('usr-li');
+    
+        span.textContent = l + 1;
+        cout.textContent = history[l].computer;
+        sta.textContent = history[l].status;
+        uout.textContent = history[l].user;
+    
+        scrDisplayLi.append(cout, sta, uout);
+        h2.append(span);
+        newli.append(h2, scrDisplayLi);
+        list.append(newli);
+    }
+}
+
+function removeHistory() {
+    while (list.hasChildNodes()) {
+        list.firstChild.remove();
+    }
+}
+
 function coverPage() {
     sideBarContainer.animate(
         [
@@ -93,6 +139,7 @@ function slideAway(elem) {
 
 closeBtnHis.addEventListener('click', () => {
     slideAway(closeBtnHis);
+    removeHistory(); // it removes all elements from the history ul to make sure it waits clean the next time loadHistory() is called.
 });
 closeBtnHelp.addEventListener('click', () => {
     slideAway(closeBtnHelp);

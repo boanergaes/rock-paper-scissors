@@ -73,16 +73,7 @@ aside {
     overflow-y: scroll;
     height: 60vh;
     text-align: center;
-}
-
-/* try to make this work */
-.ul-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: var(--aside-width);
-    height: 30px;
-    background-image: linear-gradient(transparent, var(--body-background-color) 50%);
+    /* border-bottom: 1px solid var(--font-color-main-low-opacity); */
 }
 
 .history li {
@@ -114,4 +105,10 @@ aside {
     background-color: var(--rps-bar-bgcolor);
     padding: .2rem .4rem;
     color: black;
+}
+
+aside hr {
+    border: none;
+    border-bottom: 1px solid var(--font-color-main-low-opacity);
+    width: 80%;
 }

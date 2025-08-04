@@ -8,44 +8,6 @@ const playAgainSec = document.querySelector('.play-again');
 
 let history = [];
 
-function loadHistory() {
-    const list = document.querySelector('aside.history ul');
-
-    if (history.length === 0) {
-        list.textContent = "There's is no history yet.";
-        return;
-    }
-
-    let newli = document.createElement('li');
-
-    let h2 = document.createElement('h2');
-    h2.textContent = 'Game ';
-
-    let span = document.createElement('span');
-
-    let scrDisplayLi = document.createElement('div');
-    scrDisplayLi.classList.add('score-display-li');
-
-    let cout = document.createElement('output');
-    cout.classList.add('comp-li');
-
-    let sta = document.createElement('output');
-    sta.classList.add('status-li');
-    
-    let uout = document.createElement('output');
-    uout.classList.add('usr-li');
-
-    span.textContent = history.length;
-    cout.textContent = history[history.length - 1].computer;
-    sta.textContent = history[history.length - 1].status;
-    uout.textContent = history[history.length - 1].user;
-
-    scrDisplayLi.append(cout, sta, uout);
-    h2.append(span);
-    newli.append(h2, scrDisplayLi);
-    list.append(newli);
-}
-
 let round = 7; //take user input perhaps
 
 function generateInput() {
@@ -188,7 +150,9 @@ function main(usrInp) {
 
     // the end of a game with 7 rounds
     if (round === 1) {
-        playAgainSec.style.display = 'flex';
+        setTimeout(() => {
+            playAgainSec.style.display = 'flex';
+        }, 300);
 
         let stat = {};
         stat['user'] = usrScore;
