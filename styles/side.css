@@ -140,6 +140,15 @@ aside hr {
 
 .txt-content p {
     line-height: 1.3rem;
+    padding: .8rem 0;
+}
+
+.dev p {
+    padding: .2rem;
+}
+
+p.last-para {
+    text-align: center;
 }
 
 .img-container.bottom {
@@ -150,4 +159,12 @@ aside hr {
 .lightmode .txt-content {
     border-top: 1px solid hsla(0, 0%, 40%, .4);
     border-bottom: 1px solid hsla(0, 0%, 40%, .4);
+}
+
+.txt-content a {
+    color: var(--font-color-main);
+}
+
+.txt-content a:hover {
+    text-decoration: none;
 }
