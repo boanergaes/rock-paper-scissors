@@ -42,6 +42,7 @@ function slideIn(page) {
 
 historyBtn.addEventListener('click', () => {
     slideIn('history');
+    loadHistory();
 });
 
 helpBtn.addEventListener('click', () => {
