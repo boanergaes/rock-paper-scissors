@@ -115,7 +115,7 @@ aside hr {
 }
 
 
-/* ======= HELP ========= */
+/* ======= HELP AND ABOUT ========= */
 
 .txt-content {
     height: 72vh;
@@ -143,10 +143,12 @@ aside hr {
     padding: .8rem 0;
 }
 
+/* about page */
 .dev p {
     padding: .2rem;
 }
 
+/* about page */
 p.last-para {
     text-align: center;
 }
