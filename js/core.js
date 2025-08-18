@@ -5,10 +5,45 @@ let computerScore = 0;
 let computerScoreDisplay = document.querySelector('#computer-score')
 let roundDisplay = document.querySelector('#round');
 const playAgainSec = document.querySelector('.play-again');
+const playBtn = document.querySelector('#play-btn');
+const welcomeSec = document.querySelector('.welcome');
+const greeting = document.querySelector('.greeting');
+const nameInp = document.querySelector('.name-inp-container');
+
+let round; //take user input
+let r;
 
 let history = [];
 
-let round = 7; //take user input perhaps
+// if the player have entered their name before, remove the input field,
+// load thier name from local storage, and greet them. 
+// ask their name otherwise
+function greeter() {
+    if (localStorage.getItem('name')) {
+        greeting.style.display = 'block';
+        nameInp.style.display = 'none';
+        document.querySelector('.usr-name-display').textContent = localStorage.getItem('name');
+        document.querySelector('.greeting-container h1').textContent = 'WELCOME BACK✨';
+    } else {
+        greeting.style.display = 'none';
+        nameInp.style.display = 'block';
+    }
+}
+greeter();
+
+function nameRecorder(name) {
+    localStorage.setItem('name', name);
+}
+
+playBtn.addEventListener('click', () => {
+    const usrName = document.querySelector('#usr-name').value;
+    if (usrName) nameRecorder(usrName);
+    const radio = document.querySelector('input[name="round-inp"]:checked');
+    round = radio ? radio.value : 5;
+    r = round;
+    welcomeSec.style.display = 'none';
+    roundDisplay.textContent = round;
+});
 
 function generateInput() {
     const bascket = ['rock', 'paper', 'scissors'];
@@ -70,13 +105,26 @@ function inputDisplayer(usrInp, compInp) {
 }
 
 function reset() {
-    round = 7;
-    roundDisplay.textContent = round;
+    r = round;
+    roundDisplay.textContent = r;
     usrScore = 0;
     usrScoreDisplay.textContent = usrScore;
     computerScore = 0;
     computerScoreDisplay.textContent = computerScore;
     winStatusDisplay.textContent = 'Good Luck!';
+    playAgainSec.style.display = 'none';
+}
+
+function hardReset() {
+    greeter();
+    roundDisplay.textContent = '_';
+    usrScore = 0;
+    usrScoreDisplay.textContent = usrScore;
+    computerScore = 0;
+    computerScoreDisplay.textContent = computerScore;
+    winStatusDisplay.textContent = 'Good Luck!';
+    playAgainSec.style.display = 'none';
+    welcomeSec.style.display = 'flex';
 }
 
 const rockBtn = document.getElementById('rock');
@@ -94,11 +142,10 @@ scrBtn.addEventListener('click', () => {
 });
 
 const playAgainBtn = document.querySelector('#play-again-btn');
+const toHomeBtn = document.querySelector('#to-home-btn');
 
-playAgainBtn.addEventListener('click', () => {
-    reset();
-    playAgainSec.style.display = 'none';
-})
+playAgainBtn.addEventListener('click', reset);
+toHomeBtn.addEventListener('click', hardReset);
 
 function main(usrInp) {
     const genInp = generateInput();
@@ -121,7 +168,7 @@ function main(usrInp) {
     else winStatusDisplay.textContent = 'TIE';
 
     // the end of a game with 7 rounds
-    if (round === 1) {
+    if (r === 1) {
         setTimeout(() => {
             playAgainSec.style.display = 'flex';
         }, 300);
@@ -153,6 +200,6 @@ function main(usrInp) {
         compFinalScoreOutput.textContent = computerScore;
         usrFinalScoreOutput.textContent = usrScore;
     }    
-    round--;
-    roundDisplay.textContent = round;
+    r--;
+    roundDisplay.textContent = r;
 }

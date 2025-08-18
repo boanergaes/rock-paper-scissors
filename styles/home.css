@@ -8,8 +8,9 @@
     --font-family-major-mono: monospace; 
     --rps-container-bgcolor: hsl(0, 0%, 22%);
     --rps-bar-bgcolor: hsl(39, 100%, 40%);
-    --rps-bar-bgcolor-hover: hsl(39, 100%, 37%);
-    --main-font-size: 1rem
+    --rps-bar-bgcolor-hover: hsl(39, 100%, 47%);
+    --main-font-size: 1rem;
+    --lighter-text-color: hsl(0, 0%, 60%);
 }
 
 .lightmode {
@@ -19,6 +20,7 @@
     --rps-container-bgcolor: hsl(0, 0%, 84%);
     --rps-bar-bgcolor: hsl(39, 100%, 48%);
     --rps-bar-bgcolor-hover: hsl(39, 100%, 45%);
+    --lighter-text-color: hsl(0, 0%, 47%);
 }
 
 * {
@@ -139,14 +141,20 @@ output.win-status {
 }
 
 .player-logo img {
-    width: 50px;
+    width: 44px;
     border-radius: 50%;
+}
+
+.pawn-score-wrapper {
+    display: flex;
+    gap: 8px;
 }
 
 .rps-container {
     background-color: var(--rps-container-bgcolor);
     padding: 8px;
     display: flex;
+    flex-direction: column;
     gap: 8px;
     border-radius: 5px;
 }
@@ -161,14 +169,22 @@ output.win-status {
 }
 
 .rps-bar img {
-    height: 40px;
+    height: 33px;
 }
 
 .score-container {
-    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
     background-color:  var(--rps-container-bgcolor);
-    width: 100%;
+    min-width: 8.4rem;
     border-radius: 8px;
+}
+
+#computer-score, #user-score {
+    font-size: 4rem;
 }
 
 .hand-container {
@@ -226,19 +242,67 @@ button:hover {
 }
 
 /* ========= PLAY AGAIN SECTION ========== */
+/* ========= AND WELCOME SECTION =========*/
 
-section.play-again {
-    display: none;
+section.play-again, section.welcome {
     flex-direction: column;
     position: absolute;
     top: 0;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    padding-top: 6.4rem;
     width: 100%;
     height: 100%;
+}
+
+.welcome {
+    display: flex;
+    background-color: var(--body-background-color);
+    gap: 4rem;
+    text-align: center;
+    
+    z-index: 100;
+}
+
+.welcome h1 {
+    font-size: 3rem;
+}
+
+input#usr-name {
+    padding: 6px 12px;
+    background-color: var(--rps-container-bgcolor);
+    border: none;
+    border-left: 6px solid var(--rps-bar-bgcolor);
+    color: var(--font-color-main);
+    font-family: var(--font-family-major-mono);
+}
+input#usr-name:focus {
+    outline: none;
+    border-width: 8px;
+    border-color: var(--rps-bar-bgcolor-hover);
+}
+
+.lighter-text {
+    color: var(--lighter-text-color);
+}
+
+.round-inp-container {
+    display: flex;
     gap: 2rem;
+    margin-top: -3.2rem;
+}
+
+/* ---------- play again section ------------ */
+
+section.play-again {
+    display: none;
+    gap: 3rem;
     background-color: var(--body-background-color-low-opacity);
 }
+
+/* section.welcome {
+    display: block;
+} */
 
 .play-again h1 {
     font-size: 2.2rem;
@@ -266,10 +330,36 @@ footer p {
     main {
         padding: min(2%, 1rem);
     }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 430px) {
+    #computer-score, #user-score {
+        font-size: 3.6rem;
+    }
+    .score-container {
+        min-width: 6rem;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
     main {
-        padding: 0;
+        padding: 5px;
+    }
+    .pawn-score-wrapper {
+        flex-direction: column;
+    }
+    .rps-container {
+        flex-direction: row;
+    }
+    .computer-side .pawn-score-wrapper {
+        display: grid;
+    }
+    .computer-side .score-container {
+        grid-row: 1;
     }
 }

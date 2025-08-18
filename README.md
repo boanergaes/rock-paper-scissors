@@ -1,5 +1,5 @@
 # rock-paper-scissors
-This Rock Paper Scissors game was built as part of a project assigned by <a href="https://www.theodinproject.com/dashboard" target="_blank">The Odin Project</a>, an open-source platform for learning front-end web development.
+This Rock Paper Scissors game was built as part of a project assigned by <a href="https://nexustutorial.vercel.app/" target="_blank">Nexus Tutorial</a>,a summer bootcamp for front-end development.
 
 The site was made using Vanilla HTML, CSS, and JavaScript, with a focus on clean interaction and beginner-friendly logic.
 
