@@ -21,7 +21,7 @@
         <section class="below-header">
             <div class="round-container">
                 <label for="round">Round:</label>
-                <output id="round">7</output>
+                <output id="round">_</output>
             </div>
 
             <div class="accessors">
@@ -34,6 +34,39 @@
     </header>
 
     <main>
+        <section class="welcome">
+            <div class="greeting-container">
+                <p class="greeting">Hello, <span class="usr-name-display"></span></p>
+                <h1>WELCOME✨</h1>
+            </div>
+
+            <div class="name-inp-container">
+                <label for="usr-name">tell me your name:</label>
+                <input type="text" name="usr-name" id="usr-name" placeholder="(optional)">
+            </div>
+
+            <p>Choose number of rounds <span class="lighter-text">(default is 5)</span>:</p>
+
+            <div class="round-inp-container">
+                <div class="round-inp-wrapper">
+                    <input type="radio" name="round-inp" id="inp-3" value="3">
+                    <label for="inp-3">3</label>
+                </div>
+                
+                <div class="round-inp-wrapper">
+                    <input type="radio" name="round-inp" id="inp-5" value="5">
+                    <label for="inp-5">5</label>
+                </div>
+                
+                <div class="round-inp-wrapper">
+                    <input type="radio" name="round-inp" id="inp-7" value="7">
+                    <label for="inp-7">7</label>
+                </div>
+            </div>
+
+            <button id="play-btn">Play</button>
+        </section>
+
         <section class="win-status-container">
             <output class="win-status">Good Luck!</output>
         </section>
@@ -45,21 +78,23 @@
                         <img src="./images/bot-logo-final.JPG" alt="image of a bot">
                     </div>
     
-                    <div class="rps-container">
-                        <div class="rps-bar">
-                            <img src="./images/rock-bot-wbg-removebg-preview.png" alt="rock">
+                    <div class="pawn-score-wrapper">
+                        <div class="rps-container">
+                            <div class="rps-bar">
+                                <img src="./images/rock-bot-wbg-removebg-preview.png" alt="rock">
+                            </div>
+                            <div class="rps-bar">
+                                <img src="./images/paper-bot-wbg-removebg-preview.png" alt="paper">
+                            </div>
+                            <div class="rps-bar">
+                                <img src="./images/scr-bot-wbg-removebg-preview.png" alt="scissors">
+                            </div>
                         </div>
-                        <div class="rps-bar">
-                            <img src="./images/paper-bot-wbg-removebg-preview.png" alt="paper">
+        
+                        <div class="score-container">
+                            <output id="computer-score">0</output>
+                            <label for="computer-score">Score</label>
                         </div>
-                        <div class="rps-bar">
-                            <img src="./images/scr-bot-wbg-removebg-preview.png" alt="scissors">
-                        </div>
-                    </div>
-    
-                    <div class="score-container">
-                        <label for="computer-score">Score:</label>
-                        <output id="computer-score">0</output>
                     </div>
     
                     <!-- this is initially not visible, will be animated to float up if computer wins with Js -->
@@ -71,21 +106,23 @@
                         <img src="./images/person-logo-final.PNG" alt="image of a person">
                     </div>
     
-                    <div class="rps-container">
-                        <div class="rps-bar rock">
-                            <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
+                    <div class="pawn-score-wrapper">
+                        <div class="score-container">
+                            <output id="user-score">0</output>
+                            <label for="user-score">Score</label>
                         </div>
-                        <div class="rps-bar paper">
-                            <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
+                        
+                        <div class="rps-container">
+                            <div class="rps-bar rock">
+                                <img src="./images/rock-usr-wbg-long-removebg-preview.png" alt="rock">
+                            </div>
+                            <div class="rps-bar paper">
+                                <img src="./images/paper-usr-wbg-removebg-preview.png" alt="paper">
+                            </div>
+                            <div class="rps-bar scissors">
+                                <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
+                            </div>
                         </div>
-                        <div class="rps-bar scissors">
-                            <img src="./images/scr-usr-wbg-removebg-preview.png" alt="scissors">
-                        </div>
-                    </div>
-    
-                    <div class="score-container">
-                        <label for="user-score">Score:</label>
-                        <output id="user-score">0</output>
                     </div>
 
                     <!-- this is initially not visible, will be animated to float up if computer wins with Js -->
@@ -131,13 +168,12 @@
                 </div>
             </div>
 
-            <button id="play-again-btn">Play Again</button>
+            <div class="after-btns">
+                <button id="play-again-btn">Play Again</button>
+                <button id="to-home-btn">Home</button>
+            </div>
         </section>
     </main>
-
-    <footer>
-        <p>© 2025 boanergaes</p>
-    </footer>
 
     <!-- after this, all are not part of the main page. they'll be invisible unless called for -->
     <section class="side-bar-container">

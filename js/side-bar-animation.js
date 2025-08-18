@@ -147,5 +147,14 @@ closeBtnHelp.addEventListener('click', () => {
 closeBtnAbt.addEventListener('click', () => {
     slideAway(closeBtnAbt);
 });
+const closerSideBarCont = document.querySelector('.side-bar-container');
+closerSideBarCont.addEventListener('click', e => {
+    if (e.target === closerSideBarCont) {
+        slideAway(closeBtnHis);
+        removeHistory(); // it removes all elements from the history ul to make sure it waits clean the next time loadHistory() is called.
+        slideAway(closeBtnHelp);
+        slideAway(closeBtnAbt);
+    }
+})
 
 
