@@ -35,14 +35,18 @@ function nameRecorder(name) {
     localStorage.setItem('name', name);
 }
 
-playBtn.addEventListener('click', () => {
-    const usrName = document.querySelector('#usr-name').value;
-    if (usrName) nameRecorder(usrName);
+function getRound() {
     const radio = document.querySelector('input[name="round-inp"]:checked');
     round = radio ? radio.value : 5;
     r = round;
     welcomeSec.style.display = 'none';
     roundDisplay.textContent = round;
+}
+
+playBtn.addEventListener('click', () => {
+    const usrName = document.querySelector('#usr-name').value;
+    if (usrName) nameRecorder(usrName);
+    getRound();
 });
 
 function generateInput() {

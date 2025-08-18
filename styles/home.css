@@ -288,8 +288,13 @@ input#usr-name:focus {
 
 .round-inp-container {
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
     margin-top: -3.2rem;
+    font-size: larger;
+}
+
+#play-btn {
+    width: 10rem;
 }
 
 /* ---------- play again section ------------ */
